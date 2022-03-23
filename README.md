@@ -32,7 +32,7 @@ services:
       WHITELIST: "$WHITELIST"
       WEBHOOK_URL: "$WEBHOOK_URL"
     restart: always
-
+```
 # More customization
 - Add message prefix for the slack notification customizing MSG_PREFIX env.
 
