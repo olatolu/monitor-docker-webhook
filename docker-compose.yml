@@ -1,0 +1,15 @@
+version: '3'
+services:
+  monitor-docker-webhook:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: monitor-docker-webhook
+    container_name: monitor-docker-webhook
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      MSG_PREFIX: "$MSG_PREFIX"
+      WHITELIST: "$WHITELIST"
+      WEBHOOK_URL: "$WEBHOOK_URL"
+    restart: always
